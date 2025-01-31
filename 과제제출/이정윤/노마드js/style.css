@@ -1,0 +1,72 @@
+@font-face {
+  font-family: 'BMHANNAPro';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_seven@1.0/BMHANNAPro.woff')
+    format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'BMHANNAPro', sans-serif;
+  background-color: #f4f4f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  box-sizing: border-box;
+}
+.container {
+  border: 1px solid black;
+  border-radius: 6%;
+  padding: 10px;
+  height: 300px;
+  width: 300px;
+  text-align: center;
+  background-color: white;
+}
+
+.num {
+  font-size: 50px;
+}
+
+.buttonwrap {
+  width: 90%;
+  text-align: center;
+}
+
+button {
+  width: 50px;
+  height: 40px;
+  color: #fff;
+  border-radius: 5px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
+    7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+  outline: none;
+  border: none;
+  margin: 10px;
+}
+
+.up {
+  background: rgb(131, 6, 6);
+}
+.up:hover {
+  background: rgba(131, 6, 6, 0.829);
+}
+.down {
+  background: rgb(26, 80, 255);
+}
+.down:hover {
+  background: rgb(26, 80, 255, 0.829);
+}
+.reset {
+  background: rgb(6, 131, 6);
+  width: 70px;
+}
+.reset:hover {
+  background: rgb(6, 131, 6, 0.829);
+}
