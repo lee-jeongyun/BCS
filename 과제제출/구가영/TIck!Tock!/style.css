@@ -1,0 +1,44 @@
+.hidden{
+    display: none;
+}
+body{
+    background-color: teal;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 50px;
+}
+h2{
+    text-align: center;
+    margin: 50px;
+    font-size: 100px;
+    color:white;
+}
+button{
+    padding: 10px;
+}
+.raise{
+    background: none;
+    width: 200px;
+    border: 4px solid;
+    font: inherit;
+    font-size: 30px;
+    font-weight:bold;
+    line-height: 1;
+    margin: 0.5em;
+    padding-top: 2%;
+    padding-bottom: 2%;
+
+    color: darkgrey;
+    transition: 0.25s;
+  
+    &:hover,
+    &:focus { 
+        border-color: adjust-hue(adjust-hue(#ffa260, 45deg), 45deg);
+        color: #fff;
+    }
+}
+.raise:hover,
+.raise:focus {
+    box-shadow: 0 0.5em 0.5em -0.4em;
+    transform: translateY(-0.25em);
+}

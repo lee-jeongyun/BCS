@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Clock App</title>
+</head>
+<body>
+    <!-- Main -->
+    <div class="box">
+        <h2 id="clock">00:00</h2>
+    </div>
+    <button id="StopWatch" class="raise">StopWatch</button>
+    <button id="Timer" class="raise">Timer</button>
+    <button id="Alarm" class="raise">Alarm</button>
+    <!-- stopwatch -->
+    <button id="StartSB" class="hidden">Play</button>
+    <button id="Stop" class ="hidden">Stop</button>
+    <button id="ResetS" class="hidden">Reset</button> 
+    <!-- alarm -->
+    <div id="alarm-container" class="hidden">
+        <form id="submit">
+            <label for="datetime">알람 시간:</label>
+            <input type="datetime-local" id="datetime" required>
+            <br><br>
+            <label for="message">알람 메시지:</label>
+            <input type="text" id="message" placeholder="알람 메시지를 입력하세요">
+            <br><br>
+            <button type="submit">설정</button>
+        </form>
+    </div>
+    <!-- timer -->
+    <button id="Minutes" class="hidden">+1m</button>
+    <button id="Seconds" class="hidden">+1s</button>
+    <button id="StartTB" class="hidden">Start</button>
+    <button id="ResetT" class="hidden">Reset</button>
+    <form class="hidden" id="login-form"></form>
+
+    <script src="main.js"></script>
+    <script src="timer.js"></script>
+    <script src="stopwatch.js"></script>
+    <script src="alarm.js"></script>
+</body>
+</html>
