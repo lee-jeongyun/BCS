@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Clock Web</title>
+</head>
+<body>
+    <div class="mainView">
+        <h1><img src="./clock_img.png"></h1>
+        <nav class="menuBox">
+            <h2 class="alarmBtn">알람</h2>
+            <h2 class="stopWatchBtn">스톱워치</h2>
+            <h2 class="timerBtn">타이머</h2>
+        </nav>
+    </div>
+    <div class="alarmView hidden">
+        <div id="mainAlarmView">
+            <div class="editBtn">
+                <button id="alarmEdit">편집</button>
+                <button id="deleteDone" class="hidden">완료</button>
+                <button id="alarmAdd">+</button>
+            </div>
+            <h1>알람</h1>
+            <hr/>
+            <ul id="alarmList">
+                <li id="noAlarm" class="">알람 없음</li>
+            </ul>
+        </div>
+        <form id="alarmTimeSelect" class="hidden">
+            <div class="editBtn">
+                <button id="alarmCancle" class="">취소</button>
+                <button id="alarmSave" class="">저장</button>
+            </div>
+            <div id="timeSlot">
+                <select id="noon" size="5"></select>
+                <select id="hour" size="5"></select>
+                <select id="minute" size="5"></select>
+            </div>
+            <audio id="alarmSound" src="alarm.mp3"></audio>
+        </form>
+    </div>
+    <div class="stopWatchView hidden">
+        <h1 class="visualTime">00:00:00</h1>
+        <button class="Btn start">시작</button>
+        <button class="Btn stop hidden">중지</button>
+        <button class="Btn continue hidden">계속</button>
+        <button class="Btn reset hidden">초기화</button>
+    </div>
+    <div class="timerView hidden">
+        <form class="timeSelect">
+            <div>
+                <select id="hours"></select><label for="hours">시간</label>
+                <select id="minutes"></select><label for="minutes">분</label>
+                <select id="seconds"></select><label for="seconds">초</label>
+            </div>
+            <h1 id="timerTime" class="hidden">00:00:00</h1>
+            <button id="timerStart" class="Btn">시작</button>
+            <button id="timerStop" class="Btn hidden">중지</button>
+            <button id="timerContinue" class="Btn hidden">계속</button>
+            <button id="timerReset" class="Btn hidden">취소</button>
+            <audio id="alarmSound" src="alarm.mp3"></audio>
+        </form>
+    </div>
+    <nav class="menuBar">
+        <ul>
+            <li class="alarmBtn">알람</li>
+            <li class="stopWatchBtn">스톱워치</li>
+            <li class="timerBtn">타이머</li>
+        </ul>
+    </nav>
+    <script src="./javascript/alarm.js"></script>
+    <script src="./javascript/stopWatch.js"></script>
+    <script src="./javascript/timer.js"></script>
+    <script src="./javascript/menuBar.js"></script>
+</body>
+</html>
