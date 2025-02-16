@@ -4,7 +4,7 @@
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   text-align: center;
-  width: 230px;
+  width: 280px;
   max-width: 400px;
   margin: 0 auto; /* 가운데 정렬 */
   position: relative; /* 수정된 부분 */
@@ -13,6 +13,13 @@
   margin-top: -50px;
   margin-bottom: 70px;
   padding-bottom: 0px;
+}
+
+.alarm_inputs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px; /* 입력 요소 간의 간격 */
 }
 
 input[type='number'],
@@ -61,6 +68,7 @@ select:focus {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  min-width: 150px; /* 고정된 최소 너비 */
 }
 
 #alarm_list button {
@@ -74,4 +82,11 @@ select:focus {
 .alarm_content span {
   font-size: 1.5rem;
   color: #333;
+}
+
+hr {
+  height: 1px;
+  width: 270px;
+  background-color: black;
+  border: none;
 }

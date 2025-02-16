@@ -30,21 +30,41 @@
         <button class="hidden" id="timer_reset_btn">리셋</button>
       </div>
 
-        <div class="alarm_content hidden">
-      <select id="alarm_day_or_night_input">
-        <option value="오전">오전</option>
-        <option value="오후">오후</option>
-      </select>
-      <input type="number" id="alarm_hours_input" placeholder="시간" min="1" max="12" />
-      <input type="number" id="alarm_minutes_input" placeholder="분" min="0" max="59" />
-      <button id="alarm_set_btn">추가하기</button>
-      <ul id="alarm_list"></ul>
-    </div>
+      <div class="alarm_content hidden">
+        <div class="alarm_inputs">
+          <select id="alarm_day_or_night_input">
+            <option value="오전">오전</option>
+            <option value="오후">오후</option>
+          </select>
+          <select id="alarm_hours_input">
+            <!-- 시간 옵션은 1부터 12까지 -->
+            <script>
+              for (let i = 1; i <= 12; i++) {
+                document.write(`<option value="${i}">${i}</option>`);
+              }
+            </script>
+          </select>
+          <select id="alarm_minutes_input">
+            <!-- 분 옵션은 0부터 59까지 -->
+            <script>
+              for (let i = 0; i < 60; i++) {
+                document.write(
+                  `<option value="${i}">${String(i).padStart(2, '0')}</option>`
+                );
+              }
+            </script>
+          </select>
+        </div>
+        <button id="alarm_set_btn">추가하기</button>
+        <hr />
+        <ul id="alarm_list"></ul>
+      </div>
 
-    <div class="bottom_bar">
-      <button class="stopwatch_btn">스톱워치</button>
-      <button class="timer_btn">타이머</button>
-      <button class="alarm_btn">알람</button>
+      <div class="bottom_bar">
+        <button class="stopwatch_btn">스톱워치</button>
+        <button class="timer_btn">타이머</button>
+        <button class="alarm_btn">알람</button>
+      </div>
     </div>
 
     <script type="module" src="index.js"></script>

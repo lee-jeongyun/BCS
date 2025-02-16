@@ -32,7 +32,7 @@ h2 {
   font-size: 1.5rem; /* 현재 시각 크기 조정 */
   margin-bottom: var(
     --clock-content-margin-bottom,
-    100px
+    80px
   ); /* 현재 시각과 메인 콘텐츠 사이의 거리 조정 */
   color: #cddc39; /* 노란색 포인트를 더 어둡게 조정 */
 }

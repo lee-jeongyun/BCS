@@ -46,10 +46,13 @@ function paintAlarm(newAlarm) {
   const li = document.createElement('li');
   li.id = newAlarm.id;
   const span = document.createElement('span');
+  const formattedMinute = String(newAlarm.minute).padStart(2, '0');
   if (newAlarm.day === '오후') {
-    span.innerText = `${newAlarm.day} ${newAlarm.hour - 12}:${newAlarm.minute}`;
+    const formattedHour = newAlarm.hour === 12 ? 12 : newAlarm.hour - 12;
+    span.innerText = `${newAlarm.day} ${formattedHour}:${formattedMinute}`;
   } else {
-    span.innerText = `${newAlarm.day} ${newAlarm.hour}:${newAlarm.minute}`;
+    const formattedHour = newAlarm.hour === 0 ? 12 : newAlarm.hour;
+    span.innerText = `${newAlarm.day} ${formattedHour}:${formattedMinute}`;
   }
   const button = document.createElement('button');
   button.innerText = '❌';
@@ -66,15 +69,15 @@ function handleAlarmSubmit(event) {
     hour = hour < 12 ? hour + 12 : hour;
   } else if (alarmDayInput.value === '오전' && hour === 12) {
     hour = 0;
-  } 
+  }
   const newAlarmObj = {
     hour: hour,
-    minute: alarmMinuteInput.value,
+    minute: parseInt(alarmMinuteInput.value),
     day: alarmDayInput.value,
     id: Date.now(),
   };
-  alarmHourInput.value = '';
-  alarmMinuteInput.value = '';
+  alarmHourInput.value = '3';
+  alarmMinuteInput.value = '2';
   alarmDayInput.value = '오전';
 
   alarms.push(newAlarmObj);
@@ -91,5 +94,9 @@ if (savedAlarms !== null) {
   alarms = parsedAlarms;
   parsedAlarms.forEach(paintAlarm);
 }
+
+alarmHourInput.value = '3';
+alarmMinuteInput.value = '2';
+alarmDayInput.value = '오전';
 
 setInterval(alarmRing, 1000);
