@@ -46,7 +46,11 @@ function paintAlarm(newAlarm) {
   const li = document.createElement('li');
   li.id = newAlarm.id;
   const span = document.createElement('span');
-  span.innerText = `${newAlarm.day} ${newAlarm.hour}:${newAlarm.minute}`;
+  if (newAlarm.day === '오후') {
+    span.innerText = `${newAlarm.day} ${newAlarm.hour - 12}:${newAlarm.minute}`;
+  } else {
+    span.innerText = `${newAlarm.day} ${newAlarm.hour}:${newAlarm.minute}`;
+  }
   const button = document.createElement('button');
   button.innerText = '❌';
   button.addEventListener('click', deleteAlarm);
@@ -57,18 +61,21 @@ function paintAlarm(newAlarm) {
 
 function handleAlarmSubmit(event) {
   event.preventDefault();
+  let hour = parseInt(alarmHourInput.value);
   if (alarmDayInput.value === '오후') {
-    alarmHourInput.value = parseInt(alarmHourInput.value) + 12;
-  }
+    hour = hour < 12 ? hour + 12 : hour;
+  } else if (alarmDayInput.value === '오전' && hour === 12) {
+    hour = 0;
+  } 
   const newAlarmObj = {
-    hour: alarmHourInput.value,
+    hour: hour,
     minute: alarmMinuteInput.value,
     day: alarmDayInput.value,
     id: Date.now(),
   };
   alarmHourInput.value = '';
   alarmMinuteInput.value = '';
-  alarmDayInput.value = '';
+  alarmDayInput.value = '오전';
 
   alarms.push(newAlarmObj);
   paintAlarm(newAlarmObj);

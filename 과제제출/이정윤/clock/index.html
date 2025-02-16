@@ -30,17 +30,15 @@
         <button class="hidden" id="timer_reset_btn">리셋</button>
       </div>
 
-      <div class="alarm_content hidden">
-        <input
-          type="text"
-          id="alarm_day_or_night_input"
-          placeholder="오전/오후"
-        />
-        <input type="number" id="alarm_hours_input" placeholder="시간" />
-        <input type="number" id="alarm_minutes_input" placeholder="분" />
-        <button id="alarm_set_btn">추가하기</button>
-        <ul id="alarm_list"></ul>
-      </div>
+        <div class="alarm_content hidden">
+      <select id="alarm_day_or_night_input">
+        <option value="오전">오전</option>
+        <option value="오후">오후</option>
+      </select>
+      <input type="number" id="alarm_hours_input" placeholder="시간" min="1" max="12" />
+      <input type="number" id="alarm_minutes_input" placeholder="분" min="0" max="59" />
+      <button id="alarm_set_btn">추가하기</button>
+      <ul id="alarm_list"></ul>
     </div>
 
     <div class="bottom_bar">

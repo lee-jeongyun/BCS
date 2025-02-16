@@ -43,6 +43,7 @@ h2 {
     --main-content-margin-bottom,
     20px
   ); /* 메인 콘텐츠와 하단 버튼 바 사이의 거리 조정 */
+  text-align: center; /* 가운데 정렬 */
 }
 
 .hidden {
@@ -51,9 +52,12 @@ h2 {
 
 .bottom_bar {
   display: flex;
-  justify-content: space-between; /* 삼등분을 위해 수정된 부분 */
+  justify-content: space-between; /* 가운데 정렬 */
+
   position: fixed; /* 수정된 부분 */
   bottom: 0;
+  left: 50%; /* 화면 가운데 정렬 */
+  transform: translateX(-50%); /* 화면 가운데 정렬 */
   width: 100%;
   padding: 0; /* 패딩 제거 */
   background-color: #2e7d32; /* 진한 초록색 배경 */
