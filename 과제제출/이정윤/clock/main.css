@@ -1,0 +1,101 @@
+@import url('/clock/css/timer.css');
+@import url('/clock/css/stopwatch.css');
+@import url('/clock/css/alarm.css');
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* 수정된 부분 */
+  height: 100vh;
+  margin: 0;
+  font-size: 1.5rem; /* 글씨 크기 추가 */
+  background-color: #2e7d32; /* 진한 초록색 배경 */
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* 시계를 가운데 정렬 */
+}
+
+h2 {
+  margin-top: var(--clock-top-margin, 60px); /* 시계와 맨 위 사이의 거리 조정 */
+  margin-bottom: var(
+    --clock-title-margin-bottom,
+    -30px
+  ); /* 시계 글씨와 현재 시각 사이의 거리 조정 */
+  color: #cddc39; /* 노란색 포인트를 더 어둡게 조정 */
+}
+
+#clock {
+  font-size: 1.5rem; /* 현재 시각 크기 조정 */
+  margin-bottom: var(
+    --clock-content-margin-bottom,
+    100px
+  ); /* 현재 시각과 메인 콘텐츠 사이의 거리 조정 */
+  color: #cddc39; /* 노란색 포인트를 더 어둡게 조정 */
+}
+
+.main_content {
+  font-size: 3rem;
+  margin-bottom: var(
+    --main-content-margin-bottom,
+    20px
+  ); /* 메인 콘텐츠와 하단 버튼 바 사이의 거리 조정 */
+}
+
+.hidden {
+  display: none !important;
+}
+
+.bottom_bar {
+  display: flex;
+  justify-content: space-between; /* 삼등분을 위해 수정된 부분 */
+  position: fixed; /* 수정된 부분 */
+  bottom: 0;
+  width: 100%;
+  padding: 0; /* 패딩 제거 */
+  background-color: #2e7d32; /* 진한 초록색 배경 */
+}
+
+.bottom_bar button {
+  flex: 1; /* 버튼을 동일한 크기로 삼등분 */
+  padding: 10px;
+  border: none;
+  background-color: #1b5e20; /* 진한 초록색 버튼 */
+  color: #fff; /* 글씨 색 */
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s; /* hover 효과를 위한 전환 */
+}
+
+.bottom_bar button:hover {
+  background-color: #33691e; /* hover 시 색 진해짐 */
+}
+
+.bottom_bar button:not(:last-child) {
+  border-right: 1px solid #33691e; /* 버튼 사이에 구분선 추가 */
+}
+
+.stopwatch_content,
+.timer_content,
+.alarm_content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+button {
+  background-color: #cddc39; /* 노란색 포인트를 더 어둡게 조정 */
+  color: #000; /* 글씨 색 */
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #afb42b; /* hover 시 색 진해짐 */
+}

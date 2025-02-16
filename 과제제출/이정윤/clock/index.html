@@ -1,1 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>clock</title>
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <header>
+      <h2>시계</h2>
+      <h2 id="clock"></h2>
+    </header>
 
+    <div class="main_content">
+      <div class="stopwatch_content">
+        <span>00:00.00</span>
+        <br />
+        <button id="stopwatch_start_btn">시작</button>
+        <button class="hidden" id="stopwatch_stop_btn">정지</button>
+        <button class="hidden" id="stopwatch_reset_btn">초기화</button>
+      </div>
+
+      <div class="timer_content hidden">
+        <span>00:00:00</span>
+        <input type="number" id="hours_input" placeholder="시간" />
+        <input type="number" id="minutes_input" placeholder="분" />
+        <input type="number" id="seconds_input" placeholder="초" />
+        <button id="timer_start_btn">시작</button>
+        <button class="hidden" id="timer_reset_btn">리셋</button>
+      </div>
+
+      <div class="alarm_content hidden">
+        <input type="number" id="alarm_hours_input" placeholder="시간" />
+        <input type="number" id="alarm_minutes_input" placeholder="분" />
+        <input type="number" id="alarm_seconds_input" placeholder="초" />
+        <button id="alarm_set_btn">추가하기</button>
+        <ul id="alarm_list"></ul>
+      </div>
+    </div>
+
+    <div class="bottom_bar">
+      <button class="stopwatch_btn">스톱워치</button>
+      <button class="timer_btn">타이머</button>
+      <button class="alarm_btn">알람</button>
+    </div>
+
+    <script type="module" src="index.js"></script>
+  </body>
+</html>
