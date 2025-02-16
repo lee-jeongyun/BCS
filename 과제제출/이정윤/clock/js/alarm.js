@@ -4,8 +4,8 @@ const alarmHourInput = document.querySelector(
 const alarmMinuteInput = document.querySelector(
   '.alarm_content #alarm_minutes_input'
 );
-const alarmSecondInput = document.querySelector(
-  '.alarm_content #alarm_seconds_input'
+const alarmDayInput = document.querySelector(
+  '.alarm_content #alarm_day_or_night_input'
 );
 const alarmSetBtn = document.querySelector('.alarm_content #alarm_set_btn');
 const alarmList = document.querySelector('.alarm_content #alarm_list');
@@ -18,16 +18,16 @@ function alarmRing() {
   const currentTime = new Date();
   const currentHour = currentTime.getHours();
   const currentMinute = currentTime.getMinutes();
-  const currentSecond = currentTime.getSeconds();
 
   alarms.forEach((alarm) => {
     if (
       parseInt(alarm.hour) === currentHour &&
       parseInt(alarm.minute) === currentMinute &&
-      parseInt(alarm.second) === currentSecond
+      0 === currentTime.getSeconds()
     ) {
       alert('일어나!');
     }
+    console.log(alarm.hour, currentHour, currentMinute);
   });
 }
 
@@ -46,7 +46,7 @@ function paintAlarm(newAlarm) {
   const li = document.createElement('li');
   li.id = newAlarm.id;
   const span = document.createElement('span');
-  span.innerText = `${newAlarm.hour}:${newAlarm.minute}:${newAlarm.second}`;
+  span.innerText = `${newAlarm.day} ${newAlarm.hour}:${newAlarm.minute}`;
   const button = document.createElement('button');
   button.innerText = '❌';
   button.addEventListener('click', deleteAlarm);
@@ -57,15 +57,18 @@ function paintAlarm(newAlarm) {
 
 function handleAlarmSubmit(event) {
   event.preventDefault();
+  if (alarmDayInput.value === '오후') {
+    alarmHourInput.value = parseInt(alarmHourInput.value) + 12;
+  }
   const newAlarmObj = {
     hour: alarmHourInput.value,
     minute: alarmMinuteInput.value,
-    second: alarmSecondInput.value,
+    day: alarmDayInput.value,
     id: Date.now(),
   };
   alarmHourInput.value = '';
   alarmMinuteInput.value = '';
-  alarmSecondInput.value = '';
+  alarmDayInput.value = '';
 
   alarms.push(newAlarmObj);
   paintAlarm(newAlarmObj);
