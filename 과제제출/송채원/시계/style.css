@@ -317,3 +317,8 @@ input[type="checkbox"]:checked::after {
     right: 15px; /* 체크된 상태에서 동그라미가 오른쪽으로 이동 */
 }
 
+@media screen and (max-width: 920px) {
+    body>div, #alarmTimeSelect, .menuBar {
+        width: 375px;
+    }
+}
